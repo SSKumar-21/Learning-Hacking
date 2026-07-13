@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        <i class="fa-solid fa-user-graduate"></i>
+        <span>Student Portal</span>
+    </div>
+
+    <div class="profile">
+
+        <div class="notification">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+
+        <div>
+            <h4><%= student.student_name %></h4>
+            <small>Student</small>
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside>
+
+        <ul>
+
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
+
+            <li>
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </li>
+
+            <li>
+                <i class="fa-solid fa-phone"></i>
+                Contact
+            </li>
+
+            <li>
+                <i class="fa-solid fa-envelope"></i>
+                Email
+            </li>
+
+            <li>
+                <i class="fa-solid fa-book"></i>
+                Academics
+            </li>
+
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
+
+            <li class="logout">
+                <a href="/logout" style="text-decoration:none;color:inherit;">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- Welcome -->
+
+        <section class="welcome">
+
+            <h1>
+                Welcome, <%= student.student_name %> 👋
+            </h1>
+
+            <p>
+                You have successfully logged into the Student Information System.
+            </p>
+
+        </section>
+
+        <!-- Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-id-card"></i>
+
+                <h3>Roll Number</h3>
+
+                <p>
+                    <%= student.student_roll_no %>
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <h3>Email</h3>
+
+                <p>
+                    <%= student.email %>
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <h3>Contact</h3>
+
+                <p>
+                    <%= student.student_contact %>
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <h3>WhatsApp</h3>
+
+                <p>
+                    <%= student.student_whatsapp_no || "Not Available" %>
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Student Information -->
+
+        <section class="activity">
+
+            <div class="section-title">
+                <h2>Student Information</h2>
+            </div>
+
+            <table>
+
+                <tbody>
+
+                    <tr>
+                        <th>Student Name</th>
+                        <td><%= student.student_name %></td>
+                    </tr>
+
+                    <tr>
+                        <th>Roll Number</th>
+                        <td><%= student.student_roll_no %></td>
+                    </tr>
+
+                    <tr>
+                        <th>Email</th>
+                        <td><%= student.email %></td>
+                    </tr>
+
+                    <tr>
+                        <th>Contact Number</th>
+                        <td><%= student.student_contact %></td>
+                    </tr>
+
+                    <tr>
+                        <th>Secondary Number</th>
+                        <td><%= student.student_secondary_no || "Not Available" %></td>
+                    </tr>
+
+                    <tr>
+                        <th>WhatsApp Number</th>
+                        <td><%= student.student_whatsapp_no || "Not Available" %></td>
+                    </tr>
+
+                    <tr>
+                        <th>Day Scholar</th>
+                        <td>
+                            <%= student.day_scholar ? "Yes" : "No" %>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
+```

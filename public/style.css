@@ -1,0 +1,418 @@
+/* ===========================
+   Google Font Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#08111f;
+}
+
+
+/* ===========================
+    Animated Background
+=========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(135deg,#0f172a,#111827,#1e3a8a,#2563eb);
+    background-size:400% 400%;
+    animation:bgMove 14s ease infinite;
+}
+
+.background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:#3b82f655;
+
+    border-radius:50%;
+
+    left:-120px;
+    top:-120px;
+
+    filter:blur(80px);
+
+}
+
+.background::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:#8b5cf655;
+
+    border-radius:50%;
+
+    right:-120px;
+    bottom:-120px;
+
+    filter:blur(90px);
+
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* ===========================
+    Login Card
+=========================== */
+
+.login-card{
+
+    position:relative;
+
+    width:420px;
+
+    padding:45px 40px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.45);
+
+    color:white;
+
+    z-index:5;
+
+    animation:popup .7s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* ===========================
+      Logo
+=========================== */
+
+.logo{
+
+    width:85px;
+    height:85px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.45);
+
+}
+
+.logo i{
+
+    font-size:35px;
+
+}
+
+
+/* ===========================
+      Heading
+=========================== */
+
+.login-card h1{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.login-card p{
+
+    text-align:center;
+
+    color:#d1d5db;
+
+    margin-top:10px;
+    margin-bottom:35px;
+
+}
+
+
+/* ===========================
+      Inputs
+=========================== */
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:22px;
+
+}
+
+.input-box i{
+
+    position:absolute;
+
+    left:18px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#9ca3af;
+
+    font-size:16px;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    padding-left:52px;
+
+    padding-right:15px;
+
+    background:rgba(255,255,255,.09);
+
+    color:white;
+
+    font-size:15px;
+
+    border:1px solid transparent;
+
+    transition:.3s;
+
+}
+
+.input-box input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+.input-box input:focus{
+
+    border-color:#3b82f6;
+
+    background:rgba(255,255,255,.14);
+
+    box-shadow:0 0 18px rgba(59,130,246,.25);
+
+}
+
+
+/* ===========================
+      Options
+=========================== */
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:10px 0 28px;
+
+    font-size:14px;
+
+}
+
+.options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    cursor:pointer;
+
+}
+
+.options a{
+
+    color:#60a5fa;
+
+    text-decoration:none;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* ===========================
+      Button
+=========================== */
+
+button{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 30px rgba(37,99,235,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.5);
+
+}
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* ===========================
+      Error Box
+=========================== */
+
+.error-box{
+
+    margin-top:22px;
+
+    background:#ffebee;
+
+    color:#b71c1c;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+
+/* ===========================
+      Footer
+=========================== */
+
+.footer{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+    font-size:13px;
+
+}
+
+
+/* ===========================
+      Responsive
+=========================== */
+
+@media(max-width:500px){
+
+    .login-card{
+
+        width:92%;
+
+        padding:35px 25px;
+
+    }
+
+    .login-card h1{
+
+        font-size:25px;
+
+    }
+
+}
